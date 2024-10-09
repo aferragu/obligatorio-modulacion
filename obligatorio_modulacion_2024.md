@@ -1,5 +1,9 @@
 # Propagación y Modulación
 
+## Universidad ORT Uruguay.
+
+### Docente: Andrés Ferragut
+
 ## Trabajo Obligatorio - Curso 2024.
 
 En este trabajo obligaotrio, se busca analizar el comportamiento de diferentes señales digitales, tanto en banda base como en radio frecuencia, con diferentes formas de pulso y codificación de canal. Para ello, trabajaremos con el software [`gnuradio`](https://www.gnuradio.org/). Este software permite trabajar con señales en tiempo real, y dispone de numerosos bloques para filtrar, modular, etc.
