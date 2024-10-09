@@ -20,6 +20,7 @@ Considere el diagrama de bloques de ejemplo `digital_baseband.grc`. Allí, se pr
 3. Modifique el diagrama de bloques para que el pulso sea de tipo RZ, con ancho medio tiempo de símbolo. Muestre cómo cambia el ancho de banda requerido y muestre si aparecen señales de sincronismo.
 4. Modifique el diagrama de bloques para usar ahora codificación bipolar y pulso RZ. ¿Qué cambia en los diagramas?
 5. Modifique el diagrama de ojo para usar un pulso Manchester:
+
    $$p(t) = \begin{cases}
                 \mathbf{1}_{[0,T_s/2]}(t) - \mathbf{1}_{[Ts/2,T_s]}(t) & \textrm{si } a_k=1 \\ 
                 -\mathbf{1}_{[0,T_s/2]}(t) + \mathbf{1}_{[Ts/2,T_s]}(t) & \textrm{si } a_k=0.
