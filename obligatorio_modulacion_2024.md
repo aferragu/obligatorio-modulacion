@@ -21,11 +21,9 @@ Considere el diagrama de bloques de ejemplo `digital_baseband.grc`. Allí, se pr
 4. Modifique el diagrama de bloques para usar ahora codificación bipolar y pulso RZ. ¿Qué cambia en los diagramas?
 5. Modifique el diagrama para usar un pulso Manchester:
 
-   $$p(t)$$
-   
-   $$p(t) = {\bf{1}}_{[0,T_s/2]}(t) - {\bf{1}}_{[Ts/2,T_s]}(t) \quad \text{si } a_k=1,$$
+   $$p(t) = 1_{[0,T_s/2]}(t) - 1_{[Ts/2,T_s]}(t) \quad \text{si } a_k=1,$$
 
-   $$p(t) = -\mathbf{1}_{[0,T_s/2]}(t) + \mathbf{1}_{[Ts/2,T_s]}(t) \quad \textrm{si } a_k=0.$$
+   $$p(t) = -1_{[0,T_s/2]}(t) + 1_{[Ts/2,T_s]}(t) \quad \text{si } a_k=0.$$
     
     Calcule el espectro de esta señal y observe que no tiene componente de baja frecuencia. Corrobore con lo observado en `gnuradio`.
 
