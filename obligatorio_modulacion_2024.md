@@ -11,7 +11,7 @@ En este trabajo obligaotrio, se busca analizar el comportamiento de diferentes s
 A su vez, permite trabajar con interfaces de radio SDR, como por ejemplo [ADALM-PLUTO](https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/adalm-pluto.html).
 
 
-### Ejercicio 1: Espectro de la onda PAM, diagrama de ojo
+## Ejercicio 1: Espectro de la onda PAM, diagrama de ojo
 
 Considere el diagrama de bloques de ejemplo `digital_baseband.grc`. Allí, se provee un generador de bits aleatorios equiprobables. Al repetirlo `sps=16`, generamos una señal digital con 16 muestras por símbolo, cuyo pulso es NRZ. La frecuencia de muestreo se establece en $f_0=32$ kHz, por lo que la frecuencia de símbolo es $f_0/sps=f_s = 2$ kHz. La señal se alimenta a un filtro pasabajos, que opera como canal de ancho de banda $B$ ajustable, y se le agrega ruido gaussiano de desvío estándar $\sigma_N$ ajustable.
 
@@ -21,15 +21,15 @@ Considere el diagrama de bloques de ejemplo `digital_baseband.grc`. Allí, se pr
 4. Modifique el diagrama de bloques para usar ahora codificación bipolar y pulso RZ. ¿Qué cambia en los diagramas?
 5. Modifique el diagrama para usar un pulso Manchester:
 
-   $$p(t) = \begin{cases}
+   $p(t) = \begin{cases}
                 \mathbf{1}_{[0,T_s/2]}(t) - \mathbf{1}_{[Ts/2,T_s]}(t) & \textrm{si } a_k=1 \\ 
                 -\mathbf{1}_{[0,T_s/2]}(t) + \mathbf{1}_{[Ts/2,T_s]}(t) & \textrm{si } a_k=0.
-                \end{cases}$$ 
+                \end{cases}$
     
     Calcule el espectro de esta señal y observe que no tiene componente de baja frecuencia. Corrobore con lo observado en `gnuradio`.
 
 
-### Ejercicio 2: Transmisión en banda base con pulso acoplado
+## Ejercicio 2: Transmisión en banda base con pulso acoplado
 
 En este ejercicio, buscamos analizar el efecto del ruido en detección. Para eso, partiremos del ejemplo `digital_baseband.grc` ya considerado, y le implementaremos un receptor con pulso acoplado. 
 
@@ -49,7 +49,7 @@ f_s$). Implemente un filtro acoplado de detección utilizando un bloque `decimat
     b) Sincronice la onda recibida y muestre el diagrama de ojo. ¿El desempeño es mejor o peor que el caso anterior? 
 
 
-### Ejercicio 3: Transmisión pasabanda con pulso RRC
+## Ejercicio 3: Transmisión pasabanda con pulso RRC
 
 En el ejemplo `qpsk_basic` se proporciona una base para generar símbolos a modular en QPSK o 4-QAM. El bloque *Random source* genera una secuencia aleatoria de bytes con valores en $\{0,1,2,3\}$, que deberán ser codificados en el canal. Para ello, conviene usar los bloques *Constellation encoder* y *Constellation object* que mapean los símbolos a números complejos a determinar.
 
@@ -84,6 +84,8 @@ Se proporciona además como referencia una gráfica de los símbolos transmitido
     b) Error de frecuencia en el oscilador local.
 
     c) Error de fase en el oscilador local.
+
+    d) Cambiar la constelación a QPSK.
 
 
 
