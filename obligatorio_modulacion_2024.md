@@ -49,7 +49,41 @@ f_s$). Implemente un filtro acoplado de detección utilizando un bloque `decimat
     b) Sincronice la onda recibida y muestre el diagrama de ojo. ¿El desempeño es mejor o peor que el caso anterior? 
 
 
-### Ejercicio 3: Transmisión QPSK con pulso RRC
+### Ejercicio 3: Transmisión pasabanda con pulso RRC
+
+En el ejemplo `qpsk_basic` se proporciona una base para generar símbolos a modular en QPSK o 4-QAM. El bloque *Random source* genera una secuencia aleatoria de bytes con valores en $\{0,1,2,3\}$, que deberán ser codificados en el canal. Para ello, conviene usar los bloques *Constellation encoder* y *Constellation object* que mapean los símbolos a números complejos a determinar.
+
+A su vez, se proporcionan 3 variables de interés:
+ * `samp_rate`: la tasa de muestreo de la señal completa.
+ * `symbol_rate`: la velocidad de símbolo. Notar que el bloque *Throttle* ya fija esta velocidad para el stream generado.
+ * `sps`: la cantidad de muestras por símbolo que queremos ver en la señal. Por lo tanto, `samp_rate = symbol_rate * sps`.
+
+Se proporciona además como referencia una gráfica de los símbolos transmitidos.
+
+1. 
+   a) Implemente la constelación usando *Constellation encoder/object* para 4-QAM.
+   
+   b) Agregue un pulso Root-raised-cosine con exceso de ancho de banda $\alpha=0.25$ y `num_taps`=8*sps. Este último es el largo del filtro, que está truncado pues el RRC es de respuesta infinita en el tiempo.
+   
+   c) Observe la señal generada $x_{ce}(t)$ y en particular su espectro. Al mirarla en el tiempo, observe que tiene ISI!
+
+2. Simule modular esta señal con una portadora de frecuencia $f_c=10$ kHz. Para ello, no olvide que $x_c(t) = Re[x_{ce}(t)e^{j2\pi f_c t}]$. Observe el comportamiento espectral de la señal modulada.
+
+3. Demodulador coherente:
+   
+    a) Implemente el demodulador coherente visto en el curso, utilizando como filtro acoplado el mismo filtro RRC utilizado en la modulación.
+
+    b) Analice la señal obtenida, en particular su diagrama de ojo, y verifique que no tiene ISI!
+
+    c) Decodifique la señal (sugerencia: utilizar los bloques *Delay* para tener en cuenta el largo de los filtros y *Constellation decoder* para recuperar los símbolos). Compare con la señal original.
+
+4. Explore los efectos de:
+
+    a) Agregar ruido en el canal de RF.
+
+    b) Error de frecuencia en el oscilador local.
+
+    c) Error de fase en el oscilador local.
 
 
 
