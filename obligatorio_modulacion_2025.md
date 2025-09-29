@@ -4,7 +4,7 @@
 
 ### Docente: Andrés Ferragut
 
-## Trabajo Obligatorio - Curso 2024.
+## Trabajo Obligatorio - Curso 2025.
 
 En este trabajo obligaotrio, se busca analizar el comportamiento de diferentes señales digitales, tanto en banda base como en radio frecuencia, con diferentes formas de pulso y codificación de canal. Para ello, trabajaremos con el software [`gnuradio`](https://www.gnuradio.org/). Este software permite trabajar con señales en tiempo real, y dispone de numerosos bloques para filtrar, modular, etc.
 
@@ -53,9 +53,10 @@ f_s$). Implemente un filtro acoplado de detección utilizando un bloque `decimat
 En el ejemplo `qpsk_basic` se proporciona una base para generar símbolos a modular en QPSK o 4-QAM. El bloque *Random source* genera una secuencia aleatoria de bytes con valores en $\{0,1,2,3\}$, que deberán ser codificados en el canal. Para ello, conviene usar los bloques *Constellation encoder* y *Constellation object* que mapean los símbolos a números complejos a determinar.
 
 A su vez, se proporcionan 3 variables de interés:
- * `samp_rate`: la tasa de muestreo de la señal completa.
- * `symbol_rate`: la velocidad de símbolo. Notar que el bloque *Throttle* ya fija esta velocidad para el stream generado.
- * `sps`: la cantidad de muestras por símbolo que queremos ver en la señal. Por lo tanto, `samp_rate = symbol_rate * sps`.
+
+  * `samp_rate`: la tasa de muestreo de la señal completa.
+  * `symbol_rate`: la velocidad de símbolo. Notar que el bloque *Throttle* ya fija esta velocidad para el stream generado.
+  * `sps`: la cantidad de muestras por símbolo que queremos ver en la señal. Por lo tanto, `samp_rate = symbol_rate * sps`.
 
 Se proporciona además como referencia una gráfica de los símbolos transmitidos.
 
