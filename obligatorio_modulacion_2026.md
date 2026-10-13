@@ -4,7 +4,7 @@
 
 ### Docente: Andrés Ferragut
 
-## Trabajo Obligatorio - Curso 2025.
+## Trabajo Obligatorio - Curso 2026.
 
 En este trabajo obligaotrio, se busca analizar el comportamiento de diferentes señales digitales, tanto en banda base como en radio frecuencia, con diferentes formas de pulso y codificación de canal. Para ello, trabajaremos con el software [`gnuradio`](https://www.gnuradio.org/). Este software permite trabajar con señales en tiempo real, y dispone de numerosos bloques para filtrar, modular, etc.
 
@@ -63,11 +63,11 @@ Se proporciona además como referencia una gráfica de los símbolos transmitido
 1. 
    a) Implemente la constelación usando *Constellation encoder/object* para 4-QAM.
    
-   b) Agregue un pulso Root-raised-cosine con exceso de ancho de banda $\alpha=0.25$ y `num_taps`=8*sps. Este último es el largo del filtro, que está truncado pues el RRC es de respuesta infinita en el tiempo.
+   b) Agregue un pulso Root-raised-cosine con exceso de ancho de banda $\alpha=0.25$ y `num_taps=8*sps+1`. Este último es el largo del filtro, que está truncado pues el RRC es de respuesta infinita en el tiempo.
    
    c) Observe la señal generada $x_{ce}(t)$ y en particular su espectro. Al mirarla en el tiempo, observe que tiene ISI!
 
-2. Simule modular esta señal con una portadora de frecuencia $f_c=10$ kHz. Para ello, no olvide que $x_c(t) = Re[x_{ce}(t)e^{j2\pi f_c t}]$. Observe el comportamiento espectral de la señal modulada.
+2. Simule modular esta señal con una portadora de frecuencia $f_c=16$ kHz. Para ello, no olvide que $x_c(t) = Re[x_{ce}(t)e^{j2\pi f_c t}]$. Observe el comportamiento espectral de la señal modulada.
 
 3. Demodulador coherente:
    
